@@ -23,3 +23,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 - Details page will display full house information and related characters
   ![alt text](image-3.png)
 - Character API calls are cached for better performance
+### Note
+I had some issue with Git in my office laptop, unfortunately can't able to preserve the history
