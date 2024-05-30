@@ -1,0 +1,16 @@
+<div class="card-container">
+    <ng-container *ngIf="dataLoading">
+        <app-skeleton [width]="skeletonDimension.width" [height]="skeletonDimension.height"
+            *ngFor="let skeleton of skeletonCount"></app-skeleton>
+    </ng-container>
+    <ng-container *ngIf="!dataLoading">
+        <app-card class="card" *ngFor="let house of houseData" [houseInfo]="house"
+            (showSideBar)="openSideBar($event)"></app-card>
+    </ng-container>
+</div>
+<p-paginator [first]="first" [rows]="rows" [totalRecords]="totalHouses" [showCurrentPageReport]="true"
+    [showPageLinks]="false" [showJumpToPageDropdown]="false"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords}" (onPageChange)="onPageChange($event)" />
+
+<app-house-details [data]="currentlySelectedHouse" (onHide)="handleSideBarHide()"
+    [visibility]="showSideBar"></app-house-details>

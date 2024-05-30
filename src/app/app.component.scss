@@ -1,0 +1,16 @@
+$primary-color: #4b5563;
+
+h2 {
+    color: $primary-color;
+}
+
+i {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    color: $primary-color;
+}
+
+.header {
+    display: flex;
+}

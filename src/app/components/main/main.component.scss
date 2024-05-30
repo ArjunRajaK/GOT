@@ -1,0 +1,12 @@
+$gap: 16px;
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+}
+
+.card {
+    width: calc(20% - $gap);
+    max-width: calc(20% - $gap);
+}

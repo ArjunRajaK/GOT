@@ -1,0 +1,20 @@
+<div *ngIf="character?.name">
+    <span class="bold">Name</span>
+    <p-chip [label]="character.name" [style]="{'margin': '0.5rem'}" />
+</div>
+<div *ngIf="character?.aliases?.length">
+    <span class="bold">Alias</span>
+    <p-chip *ngFor="let alias of character?.aliases" [label]="alias" [style]="{'margin': '0.5rem'}" />
+</div>
+<div *ngIf="character?.titles?.length">
+    <span class="bold">Titles</span>
+    <p-chip *ngFor="let title of character?.titles" [label]="title" [style]="{'margin': '0.5rem'}" />
+</div>
+<div *ngIf="character?.playedBy?.length">
+    <span class="bold">PlayedBy</span>
+    <p-chip *ngFor="let played of character?.playedBy" [label]="played" [style]="{'margin': '0.5rem'}" />
+</div>
+<div *ngIf="character?.gender">
+    <span class="bold">Gender</span>
+    <p-chip [label]="character.gender" [style]="{'margin': '0.5rem'}" />
+</div>

@@ -1,0 +1,44 @@
+<p-sidebar [(visible)]="visibility" [fullScreen]="true" (onHide)="hideDetailsWindow()">
+    <ng-container *ngIf="data?.coatOfArms">
+        <p-divider type="solid" />
+    </ng-container>
+    <ng-template pTemplate="header">
+        <span class="font-semibold text-xl">
+            {{data.name}}
+        </span>
+    </ng-template>
+    <div *ngIf="data?.coatOfArms">
+        <span class="bold">Coat Of Arms:</span>
+        {{data.coatOfArms}}
+    </div><br>
+    <div *ngIf="data?.region">
+        <span class="bold">Region:</span>
+        {{data.region}}
+    </div>
+    <div *ngIf="data?.titles?.length">
+        <span class="bold">Titles</span>
+        <p-chip *ngFor="let title of data?.titles" [label]="title" [style]="{'margin': '0.5rem'}" />
+    </div>
+    <div *ngIf="data?.seats?.length">
+        <span class="bold">Seats</span>
+        <p-chip *ngFor="let seat of data?.seats" [label]="seat" [style]="{'margin': '0.5rem'}" />
+    </div>
+    <p-divider type="solid" />
+    <div *ngIf="currentLord">
+        <h3>Current lord</h3>
+        <p-divider type="solid" />
+        <app-character-info [character]="currentLord"></app-character-info>
+    </div>
+    <div *ngIf="founder">
+        <p-divider type="solid" />
+        <h3>Founder</h3>
+        <p-divider type="solid" />
+        <app-character-info [character]="founder"></app-character-info>
+    </div>
+    <div *ngIf="heir">
+        <p-divider type="solid" />
+        <h3>Current lord's heir</h3>
+        <p-divider type="solid" />
+        <app-character-info [character]="heir"></app-character-info>
+    </div>
+</p-sidebar>
