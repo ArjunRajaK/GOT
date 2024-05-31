@@ -10,7 +10,7 @@ import {
   TOTAL_HOUSES,
 } from '../../constants/got-constant';
 import { GOTService } from '../../services/got.service';
-import { IHouse } from '../../model/got.model';
+import { IHouse } from '../../models/got.model';
 import { HouseDetailsComponent } from '../house-details/house-details.component';
 @Component({
   selector: 'app-main',

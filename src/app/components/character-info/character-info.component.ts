@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ChipModule } from 'primeng/chip';
-import { ICharacter } from '../../model/got.model';
+import { ICharacter } from '../../models/got.model';
 
 @Component({
   selector: 'app-character-info',

@@ -8,7 +8,7 @@ import {
   inject,
 } from '@angular/core';
 import { SidebarModule } from 'primeng/sidebar';
-import { ICharacter, IHouse } from '../../model/got.model';
+import { ICharacter, IHouse } from '../../models/got.model';
 import { CommonModule } from '@angular/common';
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
@@ -40,15 +40,17 @@ export class HouseDetailsComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     const data = <IHouse>changes['data']?.currentValue;
     if (data) {
+      this.clearCharacterInfo();
       if (data?.currentLord) this.getCurrentLord(data.currentLord);
       if (data?.founder) this.getFounder(data.founder);
       if (data?.heir) this.getHeir(data.heir);
-
-      // When the data is null
-      if (!data?.currentLord) this.currentLord = undefined;
-      if (!data?.founder) this.founder = undefined;
-      if (!data?.heir) this.heir = undefined;
     }
+  }
+
+  private clearCharacterInfo(): void {
+    this.currentLord = undefined;
+    this.founder = undefined;
+    this.heir = undefined;
   }
 
   hideDetailsWindow(): void {

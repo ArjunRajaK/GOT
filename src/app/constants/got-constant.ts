@@ -1,4 +1,4 @@
-import { ISkeletonDimension } from '../model/got.model';
+import { ISkeletonDimension } from '../models/got.model';
 
 export const MAX_COUNT_OF_DATA = 15;
 

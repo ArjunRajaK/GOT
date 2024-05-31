@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { IHouse } from '../../model/got.model';
+import { IHouse } from '../../models/got.model';
 import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-card',
